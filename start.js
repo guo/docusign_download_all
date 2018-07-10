@@ -12,7 +12,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-PAGE_LOAD_SPEED=1000
+PAGE_LOAD_SPEED=2000
 
 async function scrollToEnd() {
     // scroll to bottom
@@ -32,10 +32,10 @@ async function start() {
         console.log(i);
         console.log($('.table_copy-line-1')[i].innerHTML);
         $('.table_copy-line-1')[i].click()
-        await sleep(PAGE_LOAD_SPEED*3);
+        await sleep(PAGE_LOAD_SPEED*2);
 
         $('a.btn-primary:contains("Download")')[0].click()
-        await sleep(PAGE_LOAD_SPEED*3);
+        await sleep(PAGE_LOAD_SPEED*2);
         window.history.back();
         await scrollToEnd();
     }
